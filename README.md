@@ -21,3 +21,7 @@
 - Unit of write provisioned throughput
   - All writes are 1kb
   - All writes consist of 1 write per second
+- (Read calculation problems)
+- Ex: 7kb, 8items, stronglyconsistent. Read throughput= ceil(7/4)*8/1=16.
+- Ex: 10kb,5items, write consistent=5*10=50
+- API Error code: 400: ProvisionedThroughtExceededException( you exceeded your max allowed pro thou for a table or for one or more global sec indexes)
