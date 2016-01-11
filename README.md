@@ -25,3 +25,7 @@
 - Ex: 7kb, 8items, stronglyconsistent. Read throughput= ceil(7/4)*8/1=16.
 - Ex: 10kb,5items, write consistent=5*10=50
 - API Error code: 400: ProvisionedThroughtExceededException( you exceeded your max allowed pro thou for a table or for one or more global sec indexes)
+
+40
+- AssumeRoleWithWebIdentity API
+- copy ARN from any table, IAM->select role type->role for identity provider access->Grant access to web identity access->select facebook, type in applicationID->next step->policy generator->allow dynamodb(all action),paste ARN. ->Add statement
