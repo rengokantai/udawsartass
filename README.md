@@ -65,3 +65,20 @@ SQS
 - create a new igw, attach to vpc, create a new route table, add target=igw, destination=0.0.0.0/0.
 - Attach subnet to route table.
 - one subnet can only assoc to one route table.
+53
+- default ACL-> allow all
+- new ACL->deny all
+- A subnet can only assoc to one ACL.
+- A ACL can assoc to multiple subnet.
+- If you disasso your subnet from your ACL, it will go to default subnet.
+54
+create NAT instance
+- security group is bound to vpc
+- create sg, add inbound rules, (HTTP,HTTPS,, source=private subnet(10.0.2.0/24)
+- outbound rules.(HTTP,HTTPS), source = (0.0.0.0/0)
+- Then create new instance(EX, amzi-ami-vpc-nat-hvm), subnet should be under public subnet.(10.0.1.0/24),no public IP
+- To make a subnet public 1.public ip 2.elastic ip 3.elastic lb
+- attach se g.
+- And asso a elas ip.
+- action->networking->change source dest check->disable
+- Then edit default route table, add target:new instance destination:0.0.0.0/0
