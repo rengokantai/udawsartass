@@ -55,3 +55,13 @@ SQS
 - Maximum workflow can be 1 year and the value is always measured in seconds
 - SWF task is assigned and is never duplicated.
 
+50
+- environment tier(webserver)->create an RDS, Create this a VPC->
+52
+- create a subnet(CIDR:10.0.1.0/24)
+- create second subnet(CIDR:10.0.2.0/24)
+- create third subnet(CIDR:10.0.3.0/24)
+- Edit route table, by default, the route table can access to vpc itself
+- create a new igw, attach to vpc, create a new route table, add target=igw, destination=0.0.0.0/0.
+- Attach subnet to route table.
+- one subnet can only assoc to one route table.
