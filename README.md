@@ -38,3 +38,20 @@
 - Idempotent
 - Atomic counter(not idempotent), This means that the counter will increment each time you call updateItem 
 - BatchGetItem API, retrieve 1MB of data as many as 100 items
+43
+SQS
+- Does not offer FIFO
+- 30second min, 12 hours max visibility time out(when you receive a message from a queue and begin processing it, you may find the visibility timeout for the queue is insufficient to fully process and delete that message. You can change hte itmeout by using ChangeMessageViibility action
+- long polling max =20sec
+- 256kb message size
+- billed at 64kb chunks
+
+46
+- Create new topic>
+
+48
+- The decider is a program that controls the coordination of tasks. their ordering, concurrency, and scheduling according to applicaion logic
+- Your workflow and activity flows and age workflow execution itself are all scoped to a domain
+- Maximum workflow can be 1 year and the value is always measured in seconds
+- SWF task is assigned and is never duplicated.
+
