@@ -1,4 +1,15 @@
 ### udawsdevass
+12.
+IAM
+- Customize(change name)
+- Users->user action->manage password->
+14.
+- IAM->(right sidebar) web identity federation playground
+15.
+- SAML- secure assertive markup lang
+- Authenticate againest Identity Provider(Fb/AD)
+- Obtain temp security credentials
+- (AssumeRoleWithWebIdentity)
 17.
 aws_access_key=AKIAAA
 aws_secret_access_key=
