@@ -1,4 +1,38 @@
 ### udawsdevass
+17.
+aws_access_key=AKIAAA
+aws_secret_access_key=
+region=
+18.
+- Must assign a role when creating EC2.Roles cannot be changed after creating
+19.
+```
+<?php
+require '/var/www/html/vendor/autoload.php';
+use Aws\S3\S3Client;
+$client = S3Client::factory();
+?>
+```
+21.
+After logging in EC2,
+```
+curl http://169.254.169.254/latest/meta-data/
+```
+Or add folder name
+```
+curl http://169.254.169.254/latest/meta-data/public-ipv4
+```
+22.
+- Multiple SSL Cert can be terminated on an ELB
+- ELB's are not free.(includes CFormation, EL Beanstalk, Autoscaling)
+- Ports: 25(smtp) 80 443 1024-65535
+23.
+- Default region:us-east-1
+- some have default region(java)
+- some do not(nodejs)
+
+
+
 25.
 - upload data to S3 via SSL Encrycpted End Ponits
 - AWS Key Management service(KMS)
@@ -12,16 +46,28 @@
 - website address structure: bucketname.s3-website-eu-west-1.amazonaws.com
 - non-website: s3-website-eu-west-1.amazonaws.com/bucketname
 - Add cors if blocked
+- Step: add the following.Note add the file to child bucket
 ```
 <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
 <CORSRule>
-<AllowedOrigin><your outside link></AllowedOrigin>
+<AllowedOrigin><parent link that will load this asset></AllowedOrigin>
 <AllowedMethod>GET</AllowedMethod>
 <MaxAgeSecond>3000</MaxAgeSecond>
 <AllowedHeader>*</AllowedHeader>
 </CORSRule>
 </CORSConfiguration>
 ```
+permissions->add CORS config,paste
+add this file to child(asset) bucket.
+
+31.
+CloudFront
+- Origin: origin of all the files that the CDN will distribute, this can be either an S3 bucket an EC2 instance,an Elastic LB or Route53.
+- Distribution: consists of a colletion of edge locations
+- One dist with multiple origins
+- Web distribution, RTMP
+32.
+
 
 34.
 - You can use embedded data structures in mongodb,but not in dynamodb
