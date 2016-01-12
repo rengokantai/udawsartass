@@ -1,5 +1,31 @@
 ### udawsdevass
+25.
+- upload data to S3 via SSL Encrycpted End Ponits
+- AWS Key Management service(KMS)
+- Encryption
+  - Server side (S3 Managed keys, KMS-Managed keys,Customer Provided keys)
+  - Client side
+25
+- bucket name should be unique per region
+- To make properties public, action->public
+27
+- website address structure: bucketname.s3-website-eu-west-1.amazonaws.com
+- non-website: s3-website-eu-west-1.amazonaws.com/bucketname
+- Add cors if blocked
+```
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+<AllowedOrigin><your outside link></AllowedOrigin>
+<AllowedMethod>GET</AllowedMethod>
+<MaxAgeSecond>3000</MaxAgeSecond>
+<AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+```
 
+34.
+- You can use embedded data structures in mongodb,but not in dynamodb
+- OLAP OLTP(data mining)
 36.
 - ECR: consistency across all aopies of data is usually reached within a second,repeating a read after a shoer time should return the updated data.(best)
 - SCR: Returns a result that reflects all writes the received as sucessful response prior to the read
